@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Lo establecemos desde código según a la bbdd que queramos acceder(configurado en HibernateUtil)
+        <property name="connection.url">jdbc:mysql://localhost/proyecto?createDatabaseIfNotExist=true</property>
+        -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect.storage_engine">innodb</property>
+        <property name="hibernate.show_sql">false</property>
+
+        <!-- mapeo de las clases -->
+        <mapping class="com.ferreiro.proyecto.model.entities.Empleado"/>
+        <mapping class="com.ferreiro.proyecto.model.entities.Gestor"/>
+        <mapping class="com.ferreiro.proyecto.model.entities.Profesor"/>
+        <mapping class="com.ferreiro.proyecto.model.entities.Asignatura"/>
+        <mapping class="com.ferreiro.proyecto.model.auxiliar.Historico"/>
+        <mapping class="com.ferreiro.proyecto.model.entities.Clase"/>
+        <mapping class="com.ferreiro.proyecto.model.entities.ProfesorAsignaturaClase"/>
+        <mapping class="com.ferreiro.proyecto.model.entities.Alumno"/>
+        <mapping class="com.ferreiro.proyecto.model.entities.Asistencia"/>
+
+
+    </session-factory>
+</hibernate-configuration>
